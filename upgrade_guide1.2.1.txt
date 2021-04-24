@@ -1,0 +1,54 @@
+Files to be replaced: -
+---------------------
+database/seeders/PagesTableSeeder.php
+database/seeders/NavigationTableSeeder.php
+
+
+app/Http/Controllers/TestController.php
+
+app/Http/Requests/Api/EmailVerificationRequest.php
+app/Http/Requests/Core/NewPasswordRequest.php
+app/Http/Requests/Core/PreferenceRequest.php
+
+resources/views/public_api.blade.php
+
+routes/api.php
+routes/groups/permission/user.php
+
+
+Files to be added: -
+------------------
+app/Http/Controllers/Api/Ticket/UserTicketController.php
+app/Http/Controllers/Api/Referral/ReferralLinkController.php
+app/Http/Controllers/Api/Guest/ForgetPasswordController.php
+app/Http/Controllers/Api/Guest/LoginController.php
+app/Http/Controllers/Api/Guest/RegisterController.php
+app/Http/Controllers/Api/KYC/UserKycController.php
+app/Http/Controllers/Api/Preference/PreferenceController.php
+app/Http/Controllers/Api/Profile/ChangePasswordController.php
+app/Http/Controllers/Api/Profile/ProfileController.php
+app/Http/Controllers/Api/Profile/UpdateAvatarController.php
+app/Http/Controllers/Api/Referral/ReferralEarningController.php
+app/Http/Controllers/Api/Referral/ReferralLinkController.php
+app/Http/Controllers/Api/Referral/UserReferralController.php
+app/Http/Controllers/Api/Ticket/UserTicketController.php
+app/Http/Controllers/Api/TradeHistory/UserTradeHistoryController.php
+app/Http/Controllers/Api/Verification/VerificationController.php
+
+resources/views/private_api.blade.php
+
+
+---------------------------
+
+Run the following commands after placing files:
+
+1. `php artisan clear:all` to clear all types of cache.
+2. `composer update` to update to laravel 8.
+3. `php artisan migrate` to migrate new databases
+4. `sudo supervisorctl restart horizon` to clear queue fiels. 
+5. `sudo chown -R www-data: storage` to give permission to storage directory if necessary.
+6. `npm install` to install new laravel 8 packages
+7. `npm run prod` to build npm for production.
+8. `php artisan db:seed --class=UpdatePagesTableSeeder`
+9. `php artisan db:seed --class=UpdateNavigationTableSeeder`
+

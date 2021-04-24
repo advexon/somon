@@ -1,0 +1,121 @@
+............................................................
+Add these files to upgrade new version 
+............................................................
+app/Models/Core/Page.php
+storage/app/public/images/regular_site/about-us.jpg
+database/migrations/2020_11_11_111744_modify_fields_to_pages_table.php
+
+app/Helpers/shortcodelist.php
+resources/views/core/pages/show.blade.php
+resources/views/core/pages/admin/edit.blade.php
+resources/views/core/pages/admin/index.blade.php
+resources/views/core/pages/admin/_form.blade.php
+app/Http/Controllers/Page/AdminPageController.php
+resources/views/core/pages/admin/create.blade.php
+resources/views/core/pages/admin/visual-edit.blade.php
+app/Http/Controllers/Page/Admin/VisualEditController.php
+app/Http/Controllers/Page/AdminDynamicContentController.php
+storage/app/public/css/cm-visual-builder/style-1.css
+storage/app/public/css/cm-visual-builder/style-2.css
+storage/app/public/css/cm-visual-builder/style-3.css
+storage/app/public/css/cm-visual-builder/style-4.css
+storage/app/public/css/cm-visual-builder/style-5.css
+storage/app/public/css/cm-visual-builder/style-6.css
+
+
+
+
+............................................................
+Remove these files to upgrade new version 
+............................................................
+app/Models/Page/Page.php
+app/Http/Controllers/Page/ViewPageController.php
+app/Http/Controllers/Page/ChangePageStatusController.php
+
+resources/views/pages/page.blade.php
+resources/views/pages/page_management/edit.blade.php
+resources/views/pages/page_management/_form.blade.php
+resources/views/pages/page_management/index.blade.php
+resources/views/pages/page_management/_style.blade.php
+resources/views/pages/page_management/create.blade.php
+resources/views/pages/page_management/_script.blade.php
+
+
+
+............................................................
+Replace these files to upgrade new version 
+............................................................
+app/Helpers/helpers.php
+app/Helpers/corearrays.php
+app/Helpers/coreconstants.php
+
+app/Http/Controllers/HomeController.php
+app/Http/Controllers/Page/PageController.php
+app/Http/Controllers/Page/AdminPageController.php
+app/Http/Controllers/Core/NavigationController.php
+app/Http/Controllers/Withdrawal/UserWithdrawalController.php
+app/Http/Controllers/Api/Withdrawal/UserWithdrawalController.php
+
+app/Http/Middleware/StripTags.php
+
+app/Providers/PurifySetupProvider.php
+
+app/Http/Requests/Page/PageRequest.php
+app/Http/Requests/Core/NavigationRequest.php
+
+app/Services/Core/NavigationService.php
+app/Services/Core/ApplicationSettingService.php
+
+config/purify.php
+config/appsettings.php
+config/commonconfig.php
+config/webpermissions.php
+
+database/seeders/PagesTableSeeder.php
+database/seeders/NavigationTableSeeder.php
+database/seeders/ApplicationSettingsTableSeeder.php
+
+public/css/app.css
+public/css/menu-builder.css
+app/Http/Controllers/HomeController.php
+public/fonts/vendor/custom-icon/flaticon.css
+public/plugins/menu_manager/adminmenuhandler.js
+app/Http/Controllers/Core/NavigationController.php
+public/plugins/cm-visual-editor/visual-editor-style.css
+public/plugins/cm-visual-editor/element-library/element.js
+public/plugins/cm-visual-editor/visual-editor-element-style.css
+
+resources/views/layouts/master.blade.php
+resources/views/core/pages/show.blade.php
+resources/views/exchange/_vueInit.blade.php
+resources/views/core/navigation/index.blade.php
+resources/views/withdrawal/user/create.blade.php
+resources/views/deposit/user/deposit_form.blade.php
+resources/views/layouts/includes/breadcrumb.blade.php
+resources/views/core/renderable_template/_backend_navigation.blade.php
+
+resources/sass/app.scss
+resources/sass/components/base/_variables.scss
+resources/sass/components/core/bootstrap_custom.scss
+
+
+routes/web.php
+routes/groups/permission/admin.php
+
+
+composer.json
+composer.lock
+config/app.php
+
+
+
+
+After replacing these file run these following command 
+1. `php artisan clear:all` to clear all types of cache
+2. `composer install`
+3. `php artisan migrate`
+4. run this command - `php artisan db:seed --class=PagesTableSeeder`
+5. run this command - `php artisan db:seed --class=NavigationTableSeeder` 
+(if you have added any custom menu, please add them again from menu builder)
+6. `sudo supervisorctl restart horizon` to clear queue fiels. 
+7. `sudo chown -R www-data: storage` to give permission to storage directory if necessary.

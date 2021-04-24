@@ -1,0 +1,13 @@
+............................................................
+Replace these files to upgrade new version 
+............................................................
+
+app/Http/Controllers/NodeStatusController.php
+
+resources/views/node_status/node_status.blade.php
+
+After replacing these file run these following command 
+1. `php artisan clear:all` to clear all types of cache
+
+
+Log: 1. Fixed node status response fixed

@@ -1,0 +1,67 @@
+............................................................
+Add these files to upgrade new version 
+............................................................
+
+resources/lang/ar.json
+
+resources/sass/components/core/direction.scss
+
+public/plugins/bootstrap/bootstrap-rtl.min.css
+public/plugins/bootstrap/bootstrap.min.css
+
+public/plugins/bootstrap/bootstrap-rtl.min.js
+public/plugins/bootstrap/bootstrap.min.js
+
+storage/app/public/images/languages/_AR_.png
+
+............................................................
+Replace these files to upgrade new version 
+............................................................
+app/Helpers/coreconstants.php
+app/Helpers/helpers.php
+
+app/Http/Controllers/Core/LanguageController.php
+app/Services/Core/LanguageService.php
+
+
+app/Models/Core/Language.php
+
+database/migrations/2019_10_06_055946_create_languages_table.php
+database/seeders/LanguagesTableSeeder.php
+database/seeders/PagesTableSeeder.php
+database/seeders/NavigationTableSeeder.php
+
+resources/sass/app.scss
+resources/sass/components/core/primary.scss
+resources/sass/components/core/side_nav.scss
+
+
+public/plugins/cm-visual-editor/visual-editor-element-style.css
+public/plugins/cm-visual-editor/visual-editor-style.css
+
+resources/views/core/languages/_form.blade.php
+resources/views/core/languages/index.blade.php
+resources/views/layouts/includes/header.blade.php
+resources/views/layouts/includes/top_header.blade.php
+resources/views/core/pages/admin/index.blade.php
+resources/views/core/pages/admin/visual-edit.blade.php
+resources/views/exchange/_market_table_script.blade.php
+resources/views/exchange/_markets.blade.php
+resources/views/exchange/_vueInit.blade.php
+resources/views/layouts/includes/side_nav.blade.php
+resources/views/email/core/reset_password_link.blade.php
+resources/views/core/application_settings/edit.blade.php
+resources/views/core/roles/_form.blade.php
+config/webpermissions.php
+
+
+/var/www/html/trademen/webpack.mix.js
+
+public/js/custom.js
+
+
+After replacing these file run these following command 
+1. `php artisan clear:all` to clear all types of cache
+2. `php artisan migrate` to clear all types of cache
+3. `sudo chown -R www-data: storage` to give permission to storage directory if necessary.
+4. `npm run prod` to build css

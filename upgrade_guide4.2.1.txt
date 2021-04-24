@@ -1,0 +1,9 @@
+............................................................
+Replace these files to upgrade new version 
+............................................................
+
+app/Http/Requests/Coin/CoinRequest.php
+resources/views/coins/admin/_script.blade.php
+
+After replacing these file run these following command 
+1. `php artisan clear:all` to clear all types of cache

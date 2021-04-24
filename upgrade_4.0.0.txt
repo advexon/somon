@@ -1,0 +1,35 @@
+............................................................
+Add these files to upgrade new version 
+............................................................
+app/Jobs/OmniLayer/OmniLayerTransactionJob.php
+
+app/Override/Api/OmniLayerApi.php
+
+app/Services/OmniLayer/OmniLayerTransactionService.php
+
+database/migrations/2021_02_04_064624_add_property_id_to_coins_table.php
+
+............................................................
+Replace these files to upgrade new version 
+............................................................
+app/Helpers/corearrays.php
+app/Helpers/coreconstants.php 
+
+app/Http/Controllers/Coin/AdminCoinApiOptionController.php
+app/Http/Controllers/Core/ApplicationSettingController.php     
+app/Http/Controllers/NodeStatusController.php
+                                      
+app/Providers/AppServiceProvider.php
+
+app/Jobs/Webhook/ValidateBitcoinIpnJob.php
+                               |  22 ++++-
+app/Models/Coin/Coin.php 
+ 
+resources/views/coins/admin/api_form.blade.php
+
+
+After replacing these file run these following command 
+1. `php artisan clear:all` to clear all types of cache
+2. `php artisan migrate` to clear all types of cache
+2. `sudo supervisorctl restart all` to clear queue fiels. 
+3. `sudo chown -R www-data: storage` to give permission to storage directory if necessary.

@@ -1,0 +1,61 @@
+............................................................
+Add these files to upgrade new version 
+............................................................
+app/Jobs/ERC20/ERC20ApprovalProcess.php
+app/Jobs/ERC20/ERC20TransactionProcess.php
+app/Jobs/ERC20/ProcessERC20Transaction.php
+
+app/Override/Api/ERC20Api.php
+
+app/Services/Ethereum/ERC20DepositService.php
+
+database/migrations/2021_01_17_151329_add_contract_address_field_to_coins_table.php
+
+
+
+
+............................................................
+Replace these files to upgrade new version 
+............................................................
+
+app/Helpers/corearrays.php
+app/Helpers/coreconstants.php
+
+app/Http/Controllers/Coin/AdminCoinApiOptionController.php
+app/Http/Controllers/Coin/AdminCoinController.php
+app/Http/Controllers/Deposit/SystemDepositController.php
+app/Http/Controllers/Deposit/UserDepositController.php
+app/Http/Controllers/NodeStatusController.php
+app/Http/Controllers/TestController.php
+app/Http/Controllers/Withdrawal/SystemWithdrawalController.php
+
+app/Http/Requests/Coin/CoinRequest.php
+
+app/Jobs/Ethereum/EthereumBlockJob.php
+
+app/Models/Coin/Coin.php
+app/Models/Wallet/Wallet.php
+
+app/Override/Api/EthereumApi.php
+app/Override/Api/EthereumClient.php
+
+app/Providers/AppServiceProvider.php
+
+app/Services/Deposit/DepositService.php
+app/Services/Ethereum/Util.php
+
+public/vendor/horizon/app.js
+public/vendor/horizon/mix-manifest.json
+
+resources/views/coins/admin/_form.blade.php
+resources/views/coins/admin/_script.blade.php
+resources/views/coins/admin/api_form.blade.php
+resources/views/coins/admin/index.blade.php
+resources/views/withdrawal/admin/create.blade.php
+resources/views/withdrawal/user/_validation_script.blade.php
+
+After replacing these file run these following command 
+1. `php artisan clear:all` to clear all types of cache
+2. `php artisan migrate` to clear all types of cache
+2. `sudo supervisorctl restart all` to clear queue fiels. 
+3. `sudo chown -R www-data: storage` to give permission to storage directory if necessary.
